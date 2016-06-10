@@ -1,4 +1,9 @@
-#delay discounting
+#delay discounting procedure to collect a single indifference point at 7 days delay and magnitude = $10
+#immediate option can appear on the right or the left (randomized)
+#trials are presented in a randomized order
+
+#using shuffle from numpy.random but I have not removed the other modules which were being used in a psycopy
+#program I have been studying to learn python
 import numpy
 import scipy
 
@@ -6,7 +11,7 @@ import numpy as np  # whole numpy lib is available, prepend 'np.'
 from numpy import sin, cos, tan, log, log10, pi, average, sqrt, std, deg2rad, rad2deg, linspace, asarray
 from numpy.random import random, randint, normal, shuffle
 
-
+#each question is presented in this format although some questions are reverse coded (immediate option on the right)
 def survey_item(left_amount, left_delay, right_amount, right_delay, trial_number, trial_type):
 		print "\n ****** \n ******" * 12
 		print "Pick which one you would prefer \n"
@@ -15,6 +20,7 @@ def survey_item(left_amount, left_delay, right_amount, right_delay, trial_number
 		print "\tWould you rather have $%s DOLLARS %s or have $%s DOLLARS %s" % (left_amount, left_delay, right_amount, right_delay)
 		print "\t____________________LEFT OPTION (v)_________RIGHT OPTION(n)_____________\n"
 		response = raw_input("\t >>>>>>>>> ")
+		#more code comming soon to pass this to a file to store response and trial type)
 		print response, trial_number, trial_type
 
 def trial_1():
